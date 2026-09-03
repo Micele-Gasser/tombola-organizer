@@ -31,3 +31,7 @@ sequenceDiagram
 
 ### Download
 TODO: download exe
+
+## Help
+If you are having troubles setting this up, you can contact me on my mail
+tombola-organizer@proton.me
