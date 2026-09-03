@@ -3,7 +3,7 @@ This read-me shows architecture and design of Tombola Organizer.
 
 ## Overview
 This short overview explains the concept Tombola Organzier. The relations of different topics is shown.
-```Mermaid
+```mermaid
 ---
 config:
   theme: neo-dark
@@ -21,64 +21,60 @@ flowchart TB
 
 ## Domain Model
 The domain model is usefull for programmers to understand classes and their functionality. 
-```Mermaid
-
+```mermaid
 ---
 config:
   theme: neo-dark
-  class:
-    hideEmptyMembersBox: true
-  layout: dagre
 ---
 classDiagram
-direction TB
+    direction TB
     class TombolaManager {
     }
 
     class ServiceManager {
-	    saveFileLocation
-	    settingsFileLocation
-      settings
+        saveFileLocation
+        settingsFileLocation
+        settings
     }
 
     class SetupManager {
     }
 
     class RegulationsManager {
-	    countryRegulationWinningChance
-	    countryRegulationInvestToWinningRatio
+        countryRegulationWinningChance
+        countryRegulationInvestToWinningRatio
     }
 
     class PricesList {
-	    numberOfPrices
+        numberOfPrices
     }
 
     class Price {
-	    priceTitle
-	    priceDescription
-	    priceCost
-	    pricePhoto
+        priceTitle
+        priceDescription
+        priceCost
+        pricePhoto
     }
 
     class TicketList {
     }
 
-    class Ticket{
-        ticketNumber    
+    class Ticket {
+        ticketNumber
     }
 
-    class OrderList{
+    class OrderList {
     }
 
-    class Order{
-      ticketNumber [Array]
-      customer
+    class Order {
+        ticketNumber [Array]
+        customer
     }
 
-    class TombolaEventBus{
+    class TombolaEventBus {
     }
 
-    class DisplayManager{
+    class DisplayManager {
         orderAnimation
         pricelist
     }
@@ -93,8 +89,8 @@ direction TB
     SetupManager "1" --> "1" TombolaEventBus : starts Tombola
     TombolaEventBus "1" --> "1" OrderList : adds order
     OrderList "1" --> "*" Order
-    TombolaEventBus --> TombolaManager : saves order to disk
-    TombolaEventBus --> DisplayManager : Trigger listener
+    TombolaEventBus --> TombolaManager : saves after every order
+    TombolaEventBus "1" --> "1" DisplayManager : Trigger listener
 ```
 
 ## Design
