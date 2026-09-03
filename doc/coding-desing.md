@@ -81,6 +81,7 @@ classDiagram
 
     TombolaManager "1" --> "1" SetupManager : sets up Tombola with
     TombolaManager "1" --> "1" ServiceManager : saves File and Settings
+    TombolaManager "1" --> "1" DisplayManager : creates
     SetupManager "1" --> "1" RegulationsManager : checks country regulations
     SetupManager "1" --> "1" PricesList
     SetupManager "1" --> "1" TicketList
