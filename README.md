@@ -13,7 +13,7 @@ The tool is not built as a webshop! The cashier first needs to check the payment
 ```mermaid
 ---
 config:
-  theme: redux-color
+  theme: redux-dark-color
   look: classic
 ---
 sequenceDiagram
