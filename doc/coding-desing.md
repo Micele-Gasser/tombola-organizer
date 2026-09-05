@@ -22,7 +22,6 @@ flowchart TB
 ## Domain Model
 The domain model is usefull for programmers to understand classes and their functionality. 
 ```Mermaid
-
 ---
 config:
   theme: neo-dark
@@ -32,7 +31,7 @@ config:
 ---
 classDiagram
 direction TB
-    class TombolaManager {
+    class TombolaController {
     }
 
     class ServiceManager {
@@ -41,7 +40,7 @@ direction TB
       settings
     }
 
-    class SetupManager {
+    class SetupController {
     }
 
     class RegulationsManager {
@@ -78,23 +77,23 @@ direction TB
     class TombolaEventBus{
     }
 
-    class DisplayManager{
+    class DisplayController{
         orderAnimation
         pricelist
     }
 
-    TombolaManager "1" --> "1" SetupManager : sets up Tombola with
-    TombolaManager "1" --> "1" ServiceManager : saves File and Settings
-    SetupManager "1" --> "1" RegulationsManager : checks country regulations
-    SetupManager "1" --> "1" PricesList
-    SetupManager "1" --> "1" TicketList
+    TombolaController "1" --> "1" SetupController : sets up Tombola with
+    TombolaController "1" --> "1" ServiceManager : saves File and Settings
+    SetupController "1" --> "1" RegulationsManager : checks country regulations
+    SetupController "1" --> "1" PricesList
+    SetupController "1" --> "1" TicketList
     TicketList "1" --> "*" Ticket
     PricesList "1" --> "*" Price
-    SetupManager "1" --> "1" TombolaEventBus : starts Tombola
+    SetupController "1" --> "1" TombolaEventBus : starts Tombola
     TombolaEventBus "1" --> "1" OrderList : adds order
     OrderList "1" --> "*" Order
-    TombolaEventBus --> TombolaManager : saves order to disk
-    TombolaEventBus --> DisplayManager : Trigger listener
+    TombolaEventBus --> TombolaController : saves order to disk
+    TombolaEventBus --> DisplayController : Trigger listener
 ```
 
 ## Design
