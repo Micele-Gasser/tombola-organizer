@@ -3,7 +3,7 @@ This read-me shows architecture and design of Tombola Organizer.
 
 ## Overview
 This short overview explains the concept Tombola Organzier. The relations of different topics is shown.
-```Mermaid
+```mermaid
 ---
 config:
   theme: neo-dark
@@ -25,9 +25,6 @@ The domain model is usefull for programmers to understand classes and their func
 ---
 config:
   theme: neo-dark
-  class:
-    hideEmptyMembersBox: true
-  layout: dagre
 ---
 classDiagram
 direction TB
@@ -35,9 +32,9 @@ direction TB
     }
 
     class ServiceManager {
-	    saveFileLocation
-	    settingsFileLocation
-      settings
+        saveFileLocation
+        settingsFileLocation
+        settings
     }
 
     class SetupController {
@@ -49,32 +46,32 @@ direction TB
     }
 
     class PricesList {
-	    numberOfPrices
+        numberOfPrices
     }
 
     class Price {
-	    priceTitle
-	    priceDescription
-	    priceCost
-	    pricePhoto
+        priceTitle
+        priceDescription
+        priceCost
+        pricePhoto
     }
 
     class TicketList {
     }
 
-    class Ticket{
-        ticketNumber    
+    class Ticket {
+        ticketNumber
     }
 
-    class OrderList{
+    class OrderList {
     }
 
-    class Order{
-      ticketNumber [Array]
-      customer
+    class Order {
+        ticketNumber [Array]
+        customer
     }
 
-    class TombolaEventBus{
+    class TombolaEventBus {
     }
 
     class DisplayController{
