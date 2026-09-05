@@ -21,7 +21,7 @@ flowchart TB
 
 ## Domain Model
 The domain model is usefull for programmers to understand classes and their functionality. 
-```Mermaid
+```mermaid
 ---
 config:
   theme: neo-dark
@@ -95,12 +95,13 @@ direction TB
 
 ## Design
 The desing decision is based on the MVC-Pattern.
-```Mermaid
+```mermaid
 ---
 config:
   layout: elk
+  theme: redux-dark
 ---
-flowchart RL
+flowchart TB
  subgraph View["View Layer"]
         V1["MainView"]
         V2["SetupView"]
@@ -111,7 +112,7 @@ flowchart RL
         C1["TombolaController"]
         C2["SetupController"]
         C3["TombolaEventBus"]
-        C4["DisplyController"]
+        C4["DisplayController"]
   end
  subgraph Model["Model Layer"]
         M1["Ticket"]
@@ -126,24 +127,4 @@ flowchart RL
     View -- displays --> Model
     Controller -- manipulates --> Model
     Controller -- renders --> View
-
-     V1:::viewStyle
-     V2:::viewStyle
-     V3:::viewStyle
-     V4:::viewStyle
-     C1:::controllerStyle
-     C2:::controllerStyle
-     C3:::controllerStyle
-     C4:::controllerStyle
-     M1:::modelStyle
-     M2:::modelStyle
-     M3:::modelStyle
-     M4:::modelStyle
-     M5:::modelStyle
-     M6:::modelStyle
-     M7:::modelStyle
-    classDef viewStyle stroke:#38bdf8,fill:#f0f9ff
-    classDef controllerStyle stroke:#a78bfa,fill:#f5f3ff
-    classDef modelStyle stroke:#4ade80,fill:#f0fdf4
-    classDef dataStyle stroke:#fb923c,fill:#fff7ed
 ```
