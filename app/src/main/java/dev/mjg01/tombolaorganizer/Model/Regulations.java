@@ -1,3 +1,5 @@
+package dev.mjg01.tombolaorganizer.Model;
+
 public class Regulations {
 
     private double countryRegulationWinningChancePerTicket;

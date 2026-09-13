@@ -1,3 +1,5 @@
+package dev.mjg01.tombolaorganizer.Model;
+
 public class Price {
 
     private String priceTitle;

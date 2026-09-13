@@ -3,12 +3,27 @@
  */
 package dev.mjg01.tombolaorganizer;
 
-public class App {
-    public String getGreeting() {
-        return "Hello World!";
+import javafx.application.Application;
+import javafx.scene.control.Label;
+import javafx.scene.Scene;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+
+public class App extends Application {
+
+    @Override
+    public void start(Stage stage) {
+        Label label = new Label("Hello, JavaFX!");
+        StackPane root = new StackPane(label);
+
+        Scene scene = new Scene(root, 400, 250);
+
+        stage.setTitle("Tombola Organizer");
+        stage.setScene(scene);
+        stage.show();
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        launch(args);
     }
 }

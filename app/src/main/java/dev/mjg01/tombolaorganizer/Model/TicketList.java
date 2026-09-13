@@ -1,3 +1,7 @@
+package dev.mjg01.tombolaorganizer.Model;
+
+import java.util.List;
+
 public class TicketList {
 
     private List<Ticket> tickets;
